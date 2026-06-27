@@ -136,7 +136,7 @@ export const RoadmapPage: React.FC = () => {
               
               <div style={{ flex: 1 }}>
                 <div className="flex items-center gap-4 mb-2">
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: item.status === 'Completed' ? 'var(--text-muted)' : 'var(--text-main)', textDecoration: item.status === 'Completed' ? 'line-through' : 'none' }}>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: item.status === 'Completed' ? 'var(--text-muted)' : 'var(--text-main)'}}>
                     {item.skill}
                   </h3>
                   <span className={`badge ${item.priority === 'Essential' ? 'badge-red' : item.priority === 'High' ? 'badge-yellow' : 'badge-blue'}`}>

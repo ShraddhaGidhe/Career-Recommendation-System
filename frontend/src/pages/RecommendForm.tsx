@@ -148,7 +148,7 @@ export const RecommendForm: React.FC = () => {
               padding: '1rem', border: '1px solid var(--border)', 
               borderRadius: 'var(--radius-md)', backgroundColor: 'rgba(0,0,0,0.02)' 
             }}>
-              {ALL_SKILLS.filter(skill => skill.toLowerCase().includes(debouncedSearch.toLowerCase())).map(skill => {
+              {ALL_SKILLS.filter(skill => skill.toLowerCase().startsWith(debouncedSearch.toLowerCase())).map(skill => {
                 const isSelected = selectedSkills.includes(skill);
                 return (
                   <button
@@ -171,7 +171,7 @@ export const RecommendForm: React.FC = () => {
                 );
               })}
               
-              {ALL_SKILLS.filter(skill => skill.toLowerCase().includes(debouncedSearch.toLowerCase())).length === 0 && (
+              {ALL_SKILLS.filter(skill => skill.toLowerCase().startsWith(debouncedSearch.toLowerCase())).length === 0 && (
                 <div style={{ width: '100%', textAlign: 'center', color: 'var(--text-muted)', padding: '1rem 0' }}>
                   No skills found matching "{debouncedSearch}"
                 </div>

@@ -1,0 +1,12 @@
+Flask
+flask-cors
+PyJWT
+bcrypt
+mysql-connector-python
+scikit-learn
+numpy
+pandas
+joblib
+python-dotenv
+openpyxl
+google-generativeai

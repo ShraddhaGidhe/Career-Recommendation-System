@@ -19,10 +19,19 @@ app.register_blueprint(roadmap_bp,    url_prefix='/api/roadmap')
 def health():
     return jsonify({'status': 'ok', 'message': 'Career Recommendation API is running 🚀'})
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print("[INFO] Initialising database...")
     init_db()
+
     print("[INFO] Loading ML model...")
     load_model()
-    print("[INFO] Starting Flask server on http://localhost:5000")
-    app.run(debug=True, port=5000)
+
+    port = int(os.environ.get("PORT", 5000))
+
+    print(f"[INFO] Starting Flask server on port {port}")
+
+    app.run(
+        host="0.0.0.0",
+        port=port,
+        debug=False
+    )

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api';
 import { useAuth } from '../context/AuthContext';
 import type { RecommendationResult } from '../types';
 import { Compass, Clock, BookOpen, ChevronRight, TrendingUp } from 'lucide-react';
@@ -27,7 +28,7 @@ export const Dashboard: React.FC = () => {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/recommend/history');
+        const response = await axios.get(`${API_BASE_URL}/api/recommend/history`);
         setHistory(response.data.history || []);
       } catch (err) {
         console.error('Failed to fetch history', err);

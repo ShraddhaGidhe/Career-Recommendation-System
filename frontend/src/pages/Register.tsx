@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api';
 import { useAuth } from '../context/AuthContext';
 import { UserPlus } from 'lucide-react';
 
@@ -24,7 +25,7 @@ export const Register: React.FC = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', { name, email, password });
+      const response = await axios.post(`${API_BASE_URL}/api/auth/register`, { name, email, password });
       login(response.data.token, response.data.user);
       navigate('/dashboard');
     } catch (err: any) {

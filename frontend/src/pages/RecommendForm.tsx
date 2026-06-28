@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api';
 import { Compass, Loader } from 'lucide-react';
 
 const EDUCATION_LEVELS = ['Any Degree', 'B.A', 'B.Arch', 'B.Com', 'B.Des', 'B.Ed', 'B.Pharm', 'B.Sc', 'B.Sc Nursing', 'B.Tech', 'BA', 'BA LLB', 'BBA', 'BCA', 'BFA', 'BPT', 'CA', 'Diploma', 'GNM', 'LLB', 'M.Arch', 'M.Com', 'M.Pharm', 'M.Sc', 'M.Tech', 'MA', 'MBA', 'MBBS', 'MCA', 'MPT'];
@@ -55,7 +56,7 @@ export const RecommendForm: React.FC = () => {
         cgpa: formData.cgpa
       };
       
-      const response = await axios.post('http://localhost:5000/api/recommend/predict', payload);
+      const response = await axios.post(`${API_BASE_URL}/api/recommend/predict`, payload);
       // Pass the result via state to ResultPage
       navigate('/result', { state: { result: response.data } });
     } catch (err: any) {

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api';
 import type { RoadmapData } from '../types';
-import { Download, CheckCircle, Circle, PlayCircle, BookOpen, Briefcase, TrendingUp } from 'lucide-react';
+import { Download, CheckCircle, Circle, PlayCircle, Briefcase, TrendingUp } from 'lucide-react';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
@@ -17,7 +18,7 @@ export const RoadmapPage: React.FC = () => {
 
   const fetchRoadmap = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/roadmap/${encodeURIComponent(career || '')}`);
+      const response = await axios.get(`${API_BASE_URL}/api/roadmap/${encodeURIComponent(career || '')}`);
       setData(response.data);
     } catch (err) {
       console.error(err);
@@ -28,7 +29,7 @@ export const RoadmapPage: React.FC = () => {
 
   const updateStatus = async (skill: string, status: string) => {
     try {
-      await axios.post('http://localhost:5000/api/roadmap/progress/update', {
+      await axios.post(`${API_BASE_URL}/api/roadmap/progress/update`, {
         career_name: career,
         skill_name: skill,
         status

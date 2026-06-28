@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { API_BASE_URL } from '../config/api';
 import type { RecommendationResult } from '../types';
-import { History, Target, ArrowRight } from 'lucide-react';
+import { History, ArrowRight } from 'lucide-react';
 
 export const HistoryPage: React.FC = () => {
   const [history, setHistory] = useState<RecommendationResult[]>([]);

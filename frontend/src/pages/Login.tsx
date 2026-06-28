@@ -3,7 +3,7 @@ import { useNavigate, Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import { API_BASE_URL } from '../config/api';
 import { useAuth } from '../context/AuthContext';
-import { UserPlus, LogIn } from 'lucide-react';
+import { LogIn } from 'lucide-react';
 
 export const Login: React.FC = () => {
   const [email, setEmail] = useState('');

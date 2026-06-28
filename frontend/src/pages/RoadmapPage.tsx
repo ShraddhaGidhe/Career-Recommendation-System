@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { API_BASE_URL } from '../config/api';
 import type { RoadmapData } from '../types';
-import { Download, CheckCircle, Circle, PlayCircle, BookOpen, Briefcase, TrendingUp } from 'lucide-react';
+import { Download, CheckCircle, Circle, PlayCircle, Briefcase, TrendingUp } from 'lucide-react';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 

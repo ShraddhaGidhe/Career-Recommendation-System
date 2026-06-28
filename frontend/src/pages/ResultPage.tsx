@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, Navigate, Link } from 'react-router-dom';
 import type { RecommendationResult } from '../types';
-import { Target, CheckCircle2, XCircle, ArrowRight, TrendingUp } from 'lucide-react';
+import { Target, CheckCircle2, XCircle, TrendingUp } from 'lucide-react';
 
 export const ResultPage: React.FC = () => {
   const location = useLocation();

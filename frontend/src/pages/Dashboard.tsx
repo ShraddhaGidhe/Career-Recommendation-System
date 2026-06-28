@@ -4,7 +4,7 @@ import axios from 'axios';
 import { API_BASE_URL } from '../config/api';
 import { useAuth } from '../context/AuthContext';
 import type { RecommendationResult } from '../types';
-import { Compass, Clock, BookOpen, ChevronRight, TrendingUp } from 'lucide-react';
+import { Compass, Clock, ChevronRight, TrendingUp } from 'lucide-react';
 import {
   Chart as ChartJS,
   CategoryScale,

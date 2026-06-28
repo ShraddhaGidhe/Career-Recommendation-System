@@ -5,6 +5,8 @@ from sklearn.preprocessing import LabelEncoder
 import joblib
 import json
 import os
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
 
 print("[INFO] Loading large synthetic dataset...")
 df = pd.read_excel('ml/career_dataset_large.xlsx')
@@ -62,7 +64,14 @@ X = df[feat_cols]
 y = df['Career Options']
 
 print("[INFO] Training Random Forest model with 50+ classes...")
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X_train, y_train)
+# Calculate accuracy
+y_pred = model.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f"[INFO] Model Accuracy on Test Set: {accuracy * 100:.2f}%")
+print("[INFO] Retraining on full dataset before saving...")
 model.fit(X, y)
 
 print("[INFO] Saving models...")

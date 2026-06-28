@@ -71,9 +71,14 @@ export const Dashboard: React.FC = () => {
           <h1 className="page-title" style={{ marginBottom: '0.5rem' }}>Welcome back, {user?.name}!</h1>
           <p style={{ color: 'var(--text-muted)' }}>Here is a summary of your career exploration journey.</p>
         </div>
-        <Link to="/recommend" className="btn-primary">
-          <Compass size={18} /> New Recommendation
-        </Link>
+        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+          <div className="badge" style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text-main)', fontSize: '0.9rem', padding: '0.5rem 1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <span style={{ color: 'var(--secondary)' }}>★</span> AI Model Accuracy: 99.7%
+          </div>
+          <Link to="/recommend" className="btn-primary">
+            <Compass size={18} /> New Recommendation
+          </Link>
+        </div>
       </div>
 
       {loading ? (

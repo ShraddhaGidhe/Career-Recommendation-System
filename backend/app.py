@@ -23,12 +23,7 @@ if __name__ == "__main__":
     print("[INFO] Initialising database...")
     init_db()
 
-    print("[INFO] Loading ML model...")
-    load_model()
-
     port = int(os.environ.get("PORT", 5000))
-
-    print(f"[INFO] Starting Flask server on port {port}")
 
     app.run(
         host="0.0.0.0",

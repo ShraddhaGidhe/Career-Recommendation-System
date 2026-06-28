@@ -1,9 +1,3 @@
--- Career Recommendation System — MySQL Schema
--- Run this file to initialize the database tables
-
-CREATE DATABASE IF NOT EXISTS career_db;
-USE career_db;
-
 -- Users Table
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -13,7 +7,7 @@ CREATE TABLE IF NOT EXISTS users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Recommendations History Table
+-- Recommendations Table
 CREATE TABLE IF NOT EXISTS recommendations (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
@@ -33,7 +27,7 @@ CREATE TABLE IF NOT EXISTS recommendations (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
--- User Roadmap Progress Table
+-- Roadmaps Table
 CREATE TABLE IF NOT EXISTS user_roadmaps (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,

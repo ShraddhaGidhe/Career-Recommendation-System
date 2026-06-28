@@ -9,7 +9,7 @@ from routes.roadmap import roadmap_bp
 import os
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": ["http://localhost:5173", "http://127.0.0.1:5173"]}})
+CORS(app, resources={r"/api/*": {"origins": ["http://localhost:5173", "http://127.0.0.1:5173", "https://career-recommendation-system-1-kify.onrender.com"]}})
 
 # Register blueprints
 app.register_blueprint(auth_bp,       url_prefix='/api/auth')
